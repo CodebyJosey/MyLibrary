@@ -1,36 +1,12 @@
-﻿using MyLibrary.Utilities;
-
+﻿using MyLibrary.Data.Managers;
+using MyLibrary.Data.Models;
+using MyLibrary.Utilities;
+using MyLibrary.Validators;
 public class Program
 {
     static void Main()
     {
         Console.WriteLine("Successfully started running...\n");
-
-        // EmailValidator emailValidator = new EmailValidator();
-        // CollectionValidator<string> collectionValidator = new CollectionValidator<string>(emailValidator, 1, 5);
-
-        // List<string> emails = new List<string>
-        // {
-        //     "test@example.com",
-        //     "invalid-email",
-        //     "hello@world.com"
-        // };
-        // var result = collectionValidator.Validate(emails);
-
-        // if (!result.IsValid)
-        // {
-        //     Console.WriteLine("Validation:");
-        //     foreach (var error in result.Errors)
-        //     {
-        //         Console.WriteLine($"- {error}");
-        //     }
-        // }
-        // else
-        // {
-        //     Console.WriteLine("All values are valid.");
-        // }
-
-        Console.WriteLine(MathUtilitities.Add("nig", 1.2));
 
         Console.WriteLine("\nStopped running as there's nothing left to run...");
     }
