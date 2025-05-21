@@ -1,0 +1,104 @@
+MyLibrary/
+│
+├── src
+│   ├──Validators/
+│   │   ├── CollectionValidator.cs ✅
+│   │   ├── CompositeValidator.cs ❌
+│   │   ├── CreditCardValidator.cs ✅
+│   │   ├── CustomValidator.cs ❌
+│   │   ├── DateValidator.cs ✅
+│   │   ├── EmailValidator.cs ✅
+│   │   ├── FileNameValidator.cs ✅
+│   │   ├── HexColorValidator.cs ✅
+│   │   ├── InputValidator.cs ✅
+│   │   ├── IValidator.cs ✅
+│   │   ├── PasswordValidator.cs ✅
+│   │   ├── PhoneNumberValidator.cs ✅
+│   │   ├── URLValidator.cs ✅
+│   │   ├── ValidationResult.cs ✅
+│   │   ├── ZipCodeValidator.cs ✅
+│   │
+│   ├── Utilities/
+│   │   ├── FileUtilities.cs ❌
+│   │   ├── StringUtilities.cs ❌
+│   │   ├── DateTimeUtilities.cs ❌
+│   │   ├── ConsoleUtilities.cs ❌
+│   │   ├── NetworkUtilities.cs ❌
+│   │   ├── RandomUtilities.cs ❌
+│   │   ├── MathUtilities.cs ✅
+│   │   ├── EncryptionUtilities.cs ❌
+│   │   ├── CompressionUtilities.cs ❌
+│   │   └── PerformanceUtilities.cs ❌
+│   │
+│   ├── Data/
+│   │   ├── Models/ ✅
+│   │   │   ├── User.cs ✅
+│   │   │   ├── Product.cs ✅
+│   │   │   ├── Order.cs ✅
+│   │   │   └── Address.cs ✅
+│   │   ├── Repositories/
+│   │   │   ├── IUserRepository.cs ✅
+│   │   │   ├── IProductRepository.cs ✅
+│   │   │   ├── IOrderRepository.cs ✅
+│   │   │   ├── RepositoryBase.cs ✅
+│   │   │   └── InMemoryRepository.cs ❌
+│   │   ├── Managers/
+│   │   │   ├── DatabaseManager.cs ❌
+│   │   │   ├── MigrationManager.cs ❌
+│   │   │   └── ConnectionManager.cs ❌
+│   │   └── InMemoryRepository.cs ❌
+│   │
+│   ├── Services/
+│   │   ├── UserService.cs ✅
+│   │   ├── ProductService.cs ❌
+│   │   ├── OrderService.cs ✅
+│   │   ├── IEmailService.cs ✅
+│   │   ├── EmailService.cs ❌
+│   │   └── NotificationService.cs ❌
+│   │
+│   ├── Configuration/
+│   │   ├── ConfigManager.cs 🚧
+│   │   ├── ConfigurationLoader.cs ❌
+│   │   ├── EnvironmentVariableLoader.cs 🚧
+│   │   └── ConfigSection.cs ❌
+│   │
+│   ├── Logging/
+│   │   ├── Logger.cs ❌
+│   │   ├── LogLevel.cs ❌
+│   │   ├── FileLogger.cs ❌
+│   │   ├── ConsoleLogger.cs ❌
+│   │   └── LoggerConfig.cs ❌
+│   │
+│   ├── Extensions/
+│   │   ├── StringExtensions.cs ❌
+│   │   ├── DateTimeExtensions.cs ❌
+│   │   ├── IEnumerableExtensions.cs ❌
+│   │   ├── ValidationExtensions.cs ❌
+│   │   └── ObjectExtensions.cs ❌
+│
+├── tests/
+│   ├── Validators/
+│   │   ├── CollectionValidatorTests.cs ❌
+│   │   ├── CompositeValidatorTests.cs ❌
+│   │   ├── CreditCardValidatorTests.cs
+│   │   ├── CustomValidatorTests.cs ❌
+│   │   ├── DateValidatorTests.cs
+│   │   ├── EmailValidatorTests.cs
+│   │   ├── FileNameValidatorTests.cs ❌
+│   │   ├── HexColorValidatorTests.cs ❌
+│   │   ├── InputValidatorTests.cs ❌
+│   │   ├── PasswordValidatorTests.cs ❌
+│   │   ├── PhoneNumberValidatorTests.cs ❌
+│   │   ├── URLValidatorTests.cs ❌
+│   │   ├── ValidationResultTests.cs ❌
+│   │   ├── ZipCodeValidatorTests.cs ❌
+│   ├── Utilities/
+│   │   ├── FileUtilitiesTests.cs ❌
+│   │   ├── StringUtilitiesTests.cs ❌
+│   │   └── DateTimeUtilitiesTests.cs ❌
+│   ├── Services/
+│   │   ├── UserServiceTests.cs ❌
+│   │   └── EmailServiceTests.cs ❌
+│   └── Data/
+│       ├── InMemoryRepositoryTests.cs ❌
+│       └── UserRepositoryTests.cs ❌
