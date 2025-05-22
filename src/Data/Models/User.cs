@@ -1,10 +1,14 @@
+using System.Runtime.CompilerServices;
+
 namespace MyLibrary.Data.Models;
 
-public class User
+public class User : IUniqueEntity
 {
-    public int Id { get; set; }
+    [Unique]
     public string Username { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
-    public Address Address { get; set; } = new Address();
+    public string Address { get; set; } = string.Empty;
+
+    public string GetUniqueKey() => Username;
 }

@@ -1,9 +1,13 @@
 namespace MyLibrary.Data.Models;
 
-public class Order
+public class Order : IUniqueEntity
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
+    public string Username { get; set; } = string.Empty;
     public List<Product> Products { get; set; } = new List<Product>();
     public DateTime OrderDate { get; set; }
+
+    [Unique]
+    public string OrderDetails => $"{Username}'s order at {OrderDate}";
+
+    public string GetUniqueKey() => OrderDetails;
 }
