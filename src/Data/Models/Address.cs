@@ -1,4 +1,8 @@
-namespace MyLibrary.Data.Models;
+// Copyright (c) 2025 Josey van Aarsen
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+using CodeByJosey.MyLibrary.Data.Repositories;
+
+namespace CodeByJosey.MyLibrary.Data.Models;
 
 public class Address : IUniqueEntity
 {
@@ -11,3 +15,8 @@ public class Address : IUniqueEntity
     public string GetUniqueKey() => FullAddress;
     public override string ToString() => FullAddress;
 }
+
+//  created by Josey van Aarsen at 20250525 23:03.
+//  
+// Copyright (c) 2025 Josey van Aarsen
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.

@@ -31,6 +31,15 @@ MyLibrary/
 │   │   └── PerformanceUtilities.cs ❌
 │   │
 │   ├── Data/
+│   │   ├── Databases/
+│   │   │   ├── Users.db ✅
+│   │   ├── Imports/
+│   │   │   ├── Users.json ✅
+│   │   ├── Managers/
+│   │   │   ├── DatabaseManager.cs ✅
+│   │   │   ├── FileManager.cs ✅
+│   │   │   ├── MigrationManager.cs ❌
+│   │   │   └── ConnectionManager.cs ❌
 │   │   ├── Models/ ✅
 │   │   │   ├── User.cs ✅
 │   │   │   ├── Product.cs ✅
@@ -42,19 +51,7 @@ MyLibrary/
 │   │   │   ├── IOrderRepository.cs ✅
 │   │   │   ├── RepositoryBase.cs ✅
 │   │   │   └── InMemoryRepository.cs ❌
-│   │   ├── Managers/
-│   │   │   ├── DatabaseManager.cs ❌
-│   │   │   ├── MigrationManager.cs ❌
-│   │   │   └── ConnectionManager.cs ❌
 │   │   └── InMemoryRepository.cs ❌
-│   │
-│   ├── Services/
-│   │   ├── UserService.cs ✅
-│   │   ├── ProductService.cs ❌
-│   │   ├── OrderService.cs ✅
-│   │   ├── IEmailService.cs ✅
-│   │   ├── EmailService.cs ❌
-│   │   └── NotificationService.cs ❌
 │   │
 │   ├── Configuration/
 │   │   ├── ConfigManager.cs 🚧
@@ -80,10 +77,10 @@ MyLibrary/
 │   ├── Validators/
 │   │   ├── CollectionValidatorTests.cs ❌
 │   │   ├── CompositeValidatorTests.cs ❌
-│   │   ├── CreditCardValidatorTests.cs
+│   │   ├── CreditCardValidatorTests.cs ✅
 │   │   ├── CustomValidatorTests.cs ❌
-│   │   ├── DateValidatorTests.cs
-│   │   ├── EmailValidatorTests.cs
+│   │   ├── DateValidatorTests.cs ✅
+│   │   ├── EmailValidatorTests.cs ✅
 │   │   ├── FileNameValidatorTests.cs ❌
 │   │   ├── HexColorValidatorTests.cs ❌
 │   │   ├── InputValidatorTests.cs ❌

@@ -1,9 +1,11 @@
+// Copyright (c) 2025 Josey van Aarsen
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
 using Microsoft.Data.Sqlite;
 using Dapper;
 using System.Reflection;
-using System.Globalization;
+using CodeByJosey.MyLibrary.Data.Repositories;
 
-namespace MyLibrary.Data.Managers;
+namespace CodeByJosey.MyLibrary.Data.Managers;
 
 public sealed class DatabaseManager<T>
 {
@@ -48,11 +50,25 @@ public sealed class DatabaseManager<T>
 
         foreach (PropertyInfo prop in _properties)
         {
-            string columnType = prop.PropertyType == typeof(double) ? "REAL" : "TEXT";
+            string columnType = GetSQLiteType(prop.PropertyType);
             if (prop == _properties[0]) columns.Add($"{prop.Name} {columnType} UNIQUE");
             else columns.Add($"{prop.Name} {columnType}");
         }
         return $"CREATE TABLE IF NOT EXISTS {_tableName} (Id INTEGER PRIMARY KEY AUTOINCREMENT, {string.Join(", ", columns)})";
+    }
+
+    private string GetSQLiteType(Type type)
+    {
+        if (type == typeof(int) || type == typeof(long) || type == typeof(bool))
+            return "INTEGER";
+        else if (type == typeof(double) || type == typeof(float))
+            return "REAL";
+        else if (type == typeof(string) || type == typeof(DateTime))
+            return "TEXT";
+        else if (type == typeof(byte[]))
+            return "BLOB";
+        else
+            return "TEXT"; // fallback
     }
 
     public void Insert(T model)
@@ -60,7 +76,7 @@ public sealed class DatabaseManager<T>
         using (SqliteConnection connection = new SqliteConnection(_connectionString))
         {
             connection.Open();
-            string insertQuery = GenerateInsertQuery(model);
+            string insertQuery = GenerateInsertQuery();
 
             using (SqliteCommand command = new SqliteCommand(insertQuery, connection))
             {
@@ -70,7 +86,7 @@ public sealed class DatabaseManager<T>
         }
     }
 
-    private string GenerateInsertQuery(T model)
+    private string GenerateInsertQuery()
     {
         string columns = string.Join(", ", _properties.Select(p => p.Name));
         string parameters = string.Join(", ", _properties.Select(p => "@" + p.Name));

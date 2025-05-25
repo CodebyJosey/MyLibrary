@@ -1,9 +1,8 @@
 // Copyright (c) 2025 Josey van Aarsen
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
-namespace CodeByJosey.MyLibrary.Validators;
+namespace CodeByJosey.MyLibrary.Data.Models;
 
-public interface IValidator<T>
+public class Match
 {
-    bool IsValid(T input);
-    IEnumerable<string> GetErrors();
+    
 }

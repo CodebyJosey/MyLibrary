@@ -1,6 +1,8 @@
-using MyLibrary.Validators;
+// Copyright (c) 2025 Josey van Aarsen
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+using CodeByJosey.MyLibrary.Validators;
 
-namespace MyLibrary.Tests.Validators;
+namespace CodeByJosey.MyLibrary.Tests.Validators;
 
 [TestClass]
 public sealed class EmailValidatorTests
