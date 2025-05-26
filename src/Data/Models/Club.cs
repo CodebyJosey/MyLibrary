@@ -2,12 +2,16 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 namespace CodeByJosey.MyLibrary.Data.Models;
 
-public class Competitor
+public class Club
 {
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; }
+    public string City { get; }
 
-    public Competitor(string name)
+    public Club(string name, string city)
     {
         Name = name;
+        City = city;
     }
+
+    public override string ToString() => $"{Name} ({City})";
 }
